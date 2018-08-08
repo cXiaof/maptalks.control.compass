@@ -1,0 +1,37 @@
+{
+  "name": "maptalks.control.compass",
+  "version": "0.1.0-alpha.1",
+  "description": "A maptalks Compass Control.",
+  "license": "MIT",
+  "author": "cXiaof",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cXiaof/maptalks.control.compass.git"
+  },
+  "main": "dist/maptalks.control.compass.min.js",
+  "keywords": ["maptalks", "control.compass", "control", "compass"],
+  "bugs": {
+    "url": "https://github.com/cXiaof/maptalks.control.compass/issues"
+  },
+  "homepage": "https://github.com/cXiaof/maptalks.control.compass",
+  "scripts": {
+    "prepublish": "gulp minify",
+    "b": "gulp minify",
+    "watch": "gulp watch",
+    "w": "gulp watch",
+    "i": "jsinspect ./index.js",
+    "it": "jsinspect -t 20 ./index.js"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "jsinspect": "^0.12.7",
+    "maptalks": "^0.40.5",
+    "maptalks-build-helpers": "^0.5.0"
+  },
+  "dependencies": {
+    "geojson2svg": "^1.2.3",
+    "lodash": "^4.17.10"
+  }
+}
