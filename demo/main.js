@@ -10,7 +10,7 @@ const map = new maptalks.Map('map', {
     })
 })
 
-const control = new CompassControl({
+const control = new maptalks.CompassControl({
     position: 'top-right'
 })
 map.addControl(control)

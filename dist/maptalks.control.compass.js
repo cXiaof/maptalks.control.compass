@@ -4,10 +4,10 @@
  * (c) 2016-2018 maptalks.org
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(factory());
-}(this, (function () { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.maptalks = global.maptalks || {})));
+}(this, (function (exports) { 'use strict';
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
@@ -30,10 +30,19 @@ var CompassControl = function (_maptalks$control$Con) {
         return _possibleConstructorReturn(this, _maptalks$control$Con.apply(this, arguments));
     }
 
+    CompassControl.prototype.buildOn = function buildOn(map) {
+        var dom = maptalks.DomUtil.createEl('div', 'maptalks-compass');
+        return dom;
+    };
+
     return CompassControl;
 }(maptalks.control.Control);
 
 CompassControl.mergeOptions(options);
+
+exports.CompassControl = CompassControl;
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.0-alpha.1');
 

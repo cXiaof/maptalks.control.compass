@@ -24,9 +24,16 @@ var CompassControl = function (_maptalks$control$Con) {
         return _possibleConstructorReturn(this, _maptalks$control$Con.apply(this, arguments));
     }
 
+    CompassControl.prototype.buildOn = function buildOn(map) {
+        var dom = maptalks.DomUtil.createEl('div', 'maptalks-compass');
+        return dom;
+    };
+
     return CompassControl;
 }(maptalks.control.Control);
 
 CompassControl.mergeOptions(options);
+
+export { CompassControl };
 
 typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.0-alpha.1');
