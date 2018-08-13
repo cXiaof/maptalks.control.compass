@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+$compass-bg: #172029;
+$dial-width: 2px;
+$width-base: 3px;
+$width-base-2: $width-base * 2;
+$width-base-4: $width-base * 4;
+$width-base-5: $width-base * 5;
+$width-base-10: $width-base * 10;
+
+.maptalks-compass {
+    width: $width-base-10;
+    height: $width-base-10;
+    border-radius: 50%;
+    background-color: $compass-bg;
+    .maptalks-compass-dial {
+        .maptalks-compass-dial-clock {
+            position: absolute;
+            width: $dial-width;
+            height: $width-base-10;
+            left: calc(50% - #{$dial-width / 2});
+            &::before,
+            &::after {
+                content: '\20';
+                display: block;
+                width: $dial-width;
+                background: white;
+            }
+            &:nth-child(odd) {
+                &::before,
+                &::after {
+                    height: $width-base-2;
+                }
+                &::after {
+                    margin-top: ($width-base-10 - ($width-base-2 * 2));
+                }
+            }
+            &:nth-child(even) {
+                &::before,
+                &::after {
+                    height: $width-base;
+                }
+                &::after {
+                    margin-top: ($width-base-10 - ($width-base * 2));
+                }
+            }
+            &:nth-child(1) {
+                transform: rotate(0deg);
+            }
+            &:nth-child(2) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(3) {
+                transform: rotate(90deg);
+            }
+            &:nth-child(4) {
+                transform: rotate(135deg);
+            }
+        }
+    }
+
+    .maptalks-compass-needle {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        &::before,
+        &::after {
+            content: '\20';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            left: $width-base-4;
+        }
+        &::before {
+            top: 0;
+            border-width: $width-base-5 $width-base 0;
+            border-color: white transparent transparent;
+            transform-origin: top center;
+        }
+        &::after {
+            top: -$width-base-5;
+            border-width: 0 $width-base $width-base-5;
+            border-color: transparent transparent red;
+            transform-origin: bottom center;
+        }
+    }
+}

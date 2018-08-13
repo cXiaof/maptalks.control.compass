@@ -24,15 +24,49 @@ var options = {
 var CompassControl = function (_maptalks$control$Con) {
     _inherits(CompassControl, _maptalks$control$Con);
 
-    function CompassControl() {
+    function CompassControl(options) {
         _classCallCheck(this, CompassControl);
 
-        return _possibleConstructorReturn(this, _maptalks$control$Con.apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, _maptalks$control$Con.call(this, options));
+
+        _this.COMPASS = 'maptalks-compass';
+        _this.DIAL = 'maptalks-compass-dial';
+        _this.NEEDLE = 'maptalks-compass-needle';
+        _this.CLOCK = 'maptalks-compass-dial-clock';
+        return _this;
     }
 
     CompassControl.prototype.buildOn = function buildOn(map) {
-        var dom = maptalks.DomUtil.createEl('div', 'maptalks-compass');
-        return dom;
+        var compass = this._getCompass();
+        return compass;
+    };
+
+    CompassControl.prototype._getCompass = function _getCompass() {
+        var compass = maptalks.DomUtil.createEl('div', this.COMPASS);
+        var dial = this._getDial();
+        var needle = this._getNeedle();
+        compass.appendChild(dial);
+        compass.appendChild(needle);
+        return compass;
+    };
+
+    CompassControl.prototype._getDial = function _getDial() {
+        var dial = maptalks.DomUtil.createEl('div', this.DIAL);
+        for (var i = 0; i < 4; i++) {
+            var clock = this._getClock();
+            dial.appendChild(clock);
+        }
+        return dial;
+    };
+
+    CompassControl.prototype._getClock = function _getClock() {
+        var clock = maptalks.DomUtil.createEl('div', this.CLOCK);
+        return clock;
+    };
+
+    CompassControl.prototype._getNeedle = function _getNeedle() {
+        var needle = maptalks.DomUtil.createEl('div', this.NEEDLE);
+        return needle;
     };
 
     return CompassControl;

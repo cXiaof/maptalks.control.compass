@@ -20,12 +20,10 @@ As a plugin, `maptalks.control.compass` must be loaded after `maptalks.js` in br
 <script type="text/javascript" src="https://unpkg.com/maptalks/dist/maptalks.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/maptalks.control.compass/dist/maptalks.geo2img.min.js"></script>
 <script>
-    // new Control: CompassControl
-    const control = new maptalks.CompassControl({
+    // new Control: CompassControl, and add to map.
+    new maptalks.CompassControl({
         position: 'top-right'
-    })
-    // add Control
-    map.addControl(control)
+    }).addTo(map)
 </script>
 ```
 
