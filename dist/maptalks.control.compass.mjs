@@ -12,7 +12,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
 var options = {
-    position: 'top-right'
+    position: 'top-right',
+    transform: ''
 };
 
 var CompassControl = function (_maptalks$control$Con) {
@@ -31,12 +32,42 @@ var CompassControl = function (_maptalks$control$Con) {
     }
 
     CompassControl.prototype.buildOn = function buildOn(map) {
+        this.map = this.getMap();
         var compass = this._getCompass();
+        var style = this.options['transform'];
+        this._compass = compass;
+        if (style) maptalks.DomUtil.setStyle(this._compass, 'transform:' + style + ';');
         return compass;
     };
 
+    CompassControl.prototype.onAdd = function onAdd() {
+        this.map.on('moveing', this._rotateCompass, this);
+        this.map.on('mousemove', this._rotateCompass, this);
+        this.map.on('viewchange', this._rotateCompass, this);
+    };
+
+    CompassControl.prototype.onRemove = function onRemove() {
+        this.map.off('moveing', this._rotateCompass, this);
+        this.map.off('mousemove', this._rotateCompass, this);
+        this.map.off('viewchange', this._rotateCompass, this);
+        removeDomNode(this._compass);
+        delete this._deg;
+        delete this._compass;
+        delete this._needle;
+        delete this.map;
+    };
+
+    CompassControl.prototype._rotateCompass = function _rotateCompass() {
+        var bearing = parseInt(this.map.getBearing(), 0);
+        if (bearing <= 180) bearing *= -1;
+        if (bearing !== parseInt(this._deg, 0)) {
+            this._deg = bearing;
+            maptalks.DomUtil.setStyle(this._needle, 'transform:rotate(' + this._deg + 'deg);');
+        }
+    };
+
     CompassControl.prototype._getCompass = function _getCompass() {
-        var compass = maptalks.DomUtil.createEl('div', this.COMPASS);
+        var compass = this._createDivWithClassName(this.COMPASS);
         var dial = this._getDial();
         var needle = this._getNeedle();
         compass.appendChild(dial);
@@ -45,7 +76,7 @@ var CompassControl = function (_maptalks$control$Con) {
     };
 
     CompassControl.prototype._getDial = function _getDial() {
-        var dial = maptalks.DomUtil.createEl('div', this.DIAL);
+        var dial = this._createDivWithClassName(this.DIAL);
         for (var i = 0; i < 4; i++) {
             var clock = this._getClock();
             dial.appendChild(clock);
@@ -54,13 +85,17 @@ var CompassControl = function (_maptalks$control$Con) {
     };
 
     CompassControl.prototype._getClock = function _getClock() {
-        var clock = maptalks.DomUtil.createEl('div', this.CLOCK);
-        return clock;
+        return this._createDivWithClassName(this.CLOCK);
     };
 
     CompassControl.prototype._getNeedle = function _getNeedle() {
-        var needle = maptalks.DomUtil.createEl('div', this.NEEDLE);
+        var needle = this._createDivWithClassName(this.NEEDLE);
+        this._needle = needle;
         return needle;
+    };
+
+    CompassControl.prototype._createDivWithClassName = function _createDivWithClassName(name) {
+        return maptalks.DomUtil.createEl('div', name);
     };
 
     return CompassControl;
