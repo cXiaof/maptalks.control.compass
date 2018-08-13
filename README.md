@@ -10,7 +10,7 @@ A maptalks Compass Control.
 
 -   Install with npm: `npm install maptalks.control.compass`.
 -   Download from [dist directory](https://github.com/cXiaof/maptalks.control.compass/tree/master/dist).
--   Use unpkg CDN: `https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js`
+-   Use unpkg CDN: `https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js` and `https://unpkg.com/maptalks.control.compass/css/maptalks.control.compass.css`
 
 ## Usage
 
@@ -18,7 +18,8 @@ As a plugin, `maptalks.control.compass` must be loaded after `maptalks.js` in br
 
 ```html
 <script type="text/javascript" src="https://unpkg.com/maptalks/dist/maptalks.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/maptalks.control.compass/dist/maptalks.geo2img.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/maptalks.control.compass/css/maptalks.control.compass.css">
 <script>
     // new Control: CompassControl, and add to map.
     new maptalks.CompassControl({
@@ -35,6 +36,7 @@ new maptalks.CompassControl(options)
 
 -   options
     -   position **String** like other maptalksControl.
+    -   transform **String** the compass dom's style: 'transform: %s'.
 
 ## Contributing
 
@@ -91,3 +93,4 @@ $ npm run lint
 -   [maptalks.geosplit](https://github.com/cXiaof/maptalks.geosplit/issues)
 -   [maptalks.polygonbool](https://github.com/cXiaof/maptalks.polygonbool/issues)
 -   [maptalks.geo2img](https://github.com/cXiaof/maptalks.geo2img/issues)
+-   [maptalks.control.compass](https://github.com/cXiaof/maptalks.control.compass/issues)

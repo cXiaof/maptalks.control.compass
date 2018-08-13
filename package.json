@@ -9,6 +9,7 @@
     "url": "https://github.com/cXiaof/maptalks.control.compass.git"
   },
   "main": "dist/maptalks.control.compass.min.js",
+  "style": "css/maptalks.control.compass.css",
   "keywords": ["maptalks", "control.compass", "control", "compass"],
   "bugs": {
     "url": "https://github.com/cXiaof/maptalks.control.compass/issues"
