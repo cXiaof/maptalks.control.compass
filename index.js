@@ -13,7 +13,6 @@ export class CompassControl extends maptalks.control.Control {
     }
 
     buildOn(map) {
-        this.map = this.getMap()
         const compass = this._getCompass()
         const style = this.options['transform']
         this._compass = compass
@@ -22,6 +21,7 @@ export class CompassControl extends maptalks.control.Control {
     }
 
     onAdd() {
+        this.map = this.getMap()
         this.map.on('moveing', this._rotateCompass, this)
         this.map.on('mousemove', this._rotateCompass, this)
         this.map.on('viewchange', this._rotateCompass, this)

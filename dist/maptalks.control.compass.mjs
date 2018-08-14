@@ -32,7 +32,6 @@ var CompassControl = function (_maptalks$control$Con) {
     }
 
     CompassControl.prototype.buildOn = function buildOn(map) {
-        this.map = this.getMap();
         var compass = this._getCompass();
         var style = this.options['transform'];
         this._compass = compass;
@@ -41,6 +40,7 @@ var CompassControl = function (_maptalks$control$Con) {
     };
 
     CompassControl.prototype.onAdd = function onAdd() {
+        this.map = this.getMap();
         this.map.on('moveing', this._rotateCompass, this);
         this.map.on('mousemove', this._rotateCompass, this);
         this.map.on('viewchange', this._rotateCompass, this);

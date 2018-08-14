@@ -31,8 +31,5 @@
     "maptalks": "^0.40.5",
     "maptalks-build-helpers": "^0.5.0"
   },
-  "dependencies": {
-    "geojson2svg": "^1.2.3",
-    "lodash": "^4.17.10"
-  }
+  "dependencies": {}
 }

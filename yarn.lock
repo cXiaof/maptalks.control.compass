@@ -1428,12 +1428,6 @@ gaze@^0.5.1:
   dependencies:
     globule "~0.1.0"
 
-geojson2svg@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/geojson2svg/-/geojson2svg-1.2.3.tgz#dc26384a8faec047228272e97fafcf539c0e13f3"
-  dependencies:
-    multigeojson "~0.0.1"
-
 get-stdin@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
@@ -2124,7 +2118,7 @@ lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.17.10, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.5.0:
+lodash@^4.17.4, lodash@^4.2.0, lodash@^4.5.0:
   version "4.17.10"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -2332,10 +2326,6 @@ ms@0.7.2:
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
-
-multigeojson@~0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/multigeojson/-/multigeojson-0.0.1.tgz#f2404a80b6ee5a9642abb17db01a9e7f1809ef3e"
 
 multipipe@^0.1.2:
   version "0.1.2"

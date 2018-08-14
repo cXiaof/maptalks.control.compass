@@ -14,7 +14,7 @@ A maptalks Compass Control.
 
 ## Usage
 
-As a plugin, `maptalks.control.compass` must be loaded after `maptalks.js` in browsers. You can also use `'import { CompassControl } from "maptalks.control.compass"` when developing with webpack.
+As a plugin, `maptalks.control.compass` must be loaded after `maptalks.js` in browsers. You can also use `'import { CompassControl } from "maptalks.control.compass"` and `'import "maptalks.control.compass/css/maptalks.control.compass.css"` when developing with webpack.
 
 ```html
 <script type="text/javascript" src="https://unpkg.com/maptalks/dist/maptalks.min.js"></script>
@@ -23,7 +23,8 @@ As a plugin, `maptalks.control.compass` must be loaded after `maptalks.js` in br
 <script>
     // new Control: CompassControl, and add to map.
     new maptalks.CompassControl({
-        position: 'top-right'
+        position: 'top-right',
+        // transform: 'scale(1.2) translate(10%, 10%)'
     }).addTo(map)
 </script>
 ```
