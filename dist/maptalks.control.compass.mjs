@@ -1,5 +1,5 @@
 /*!
- * maptalks.control.compass v0.1.0-alpha.1
+ * maptalks.control.compass v0.1.0-beta.1
  * LICENSE : MIT
  * (c) 2016-2018 maptalks.org
  */
@@ -105,4 +105,4 @@ CompassControl.mergeOptions(options);
 
 export { CompassControl };
 
-typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.0-alpha.1');
+typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.0-beta.1');
