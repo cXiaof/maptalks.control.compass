@@ -95,3 +95,4 @@ $ npm run lint
 -   [maptalks.polygonbool](https://github.com/cXiaof/maptalks.polygonbool/issues)
 -   [maptalks.geo2img](https://github.com/cXiaof/maptalks.geo2img/issues)
 -   [maptalks.control.compass](https://github.com/cXiaof/maptalks.control.compass/issues)
+-   [maptalks.autogradual](https://github.com/cXiaof/maptalks.autogradual/issues)
