@@ -1,7 +1,7 @@
 /*!
- * maptalks.control.compass v0.1.0-beta.1
+ * maptalks.control.compass v0.1.0-beta.2
  * LICENSE : MIT
- * (c) 2016-2018 maptalks.org
+ * (c) 2016-2019 maptalks.org
  */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -113,6 +113,6 @@ exports.CompassControl = CompassControl;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.0-beta.1');
+typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.0-beta.2');
 
 })));

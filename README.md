@@ -18,12 +18,15 @@ As a plugin, `maptalks.control.compass` must be loaded after `maptalks.js` in br
 
 ```html
 <script type="text/javascript" src="https://unpkg.com/maptalks/dist/maptalks.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/maptalks.control.compass/css/maptalks.control.compass.css">
+<script
+    type="text/javascript"
+    src="https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js"
+></script>
+<link rel="stylesheet" href="https://unpkg.com/maptalks.control.compass/css/maptalks.control.compass.css" />
 <script>
     // new Control: CompassControl, and add to map.
     new maptalks.CompassControl({
-        position: 'top-right',
+        position: 'top-right'
         // transform: 'scale(1.2) translate(10%, 10%)'
     }).addTo(map)
 </script>
