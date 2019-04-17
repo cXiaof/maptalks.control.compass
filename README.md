@@ -11,7 +11,7 @@ A maptalks Compass Control.
 -   Install with npm: `npm install maptalks.control.compass`.
 -   Install with yarn: `yarn add maptalks.control.compass`.
 -   Download from [dist directory](https://github.com/cXiaof/maptalks.control.compass/tree/master/dist).
--   Use unpkg CDN: `https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js` and `https://unpkg.com/maptalks.control.compass/css/maptalks.control.compass.css`
+-   Use unpkg CDN: `https://cdn.jsdelivr.net/npm/maptalks.control.compass/dist/maptalks.control.compass.min.js` and `https://cdn.jsdelivr.net/npm/maptalks.control.compass/css/maptalks.control.compass.css`
 
 ## Usage
 
@@ -19,8 +19,8 @@ As a Maptalks.control, `maptalks.control.compass` must be loaded after `maptalks
 
 ```html
 <!-- ... -->
-<script src="https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/maptalks.control.compass/css/maptalks.control.compass.css" />
+<script src="https://cdn.jsdelivr.net/npm/maptalks.control.compass/dist/maptalks.control.compass.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maptalks.control.compass/css/maptalks.control.compass.css" />
 <!-- ... -->
 ```
 
