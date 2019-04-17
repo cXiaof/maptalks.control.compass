@@ -13,6 +13,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var options = {
     position: 'top-right',
+    backgroundColor: '#172029',
     transform: ''
 };
 
@@ -33,9 +34,12 @@ var CompassControl = function (_maptalks$control$Con) {
 
     CompassControl.prototype.buildOn = function buildOn(map) {
         var compass = this._getCompass();
-        var style = this.options['transform'];
         this._compass = compass;
-        if (style) maptalks.DomUtil.setStyle(this._compass, 'transform:' + style + ';');
+        var transform = this.options['transform'];
+        var bgColor = this.options['backgroundColor'];
+        var style = 'background-color:' + bgColor + ';';
+        if (transform) style += ' transform:' + transform + ';';
+        maptalks.DomUtil.setStyle(this._compass, style);
         return compass;
     };
 

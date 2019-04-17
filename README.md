@@ -9,27 +9,28 @@ A maptalks Compass Control.
 ## Install
 
 -   Install with npm: `npm install maptalks.control.compass`.
+-   Install with yarn: `yarn add maptalks.control.compass`.
 -   Download from [dist directory](https://github.com/cXiaof/maptalks.control.compass/tree/master/dist).
 -   Use unpkg CDN: `https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js` and `https://unpkg.com/maptalks.control.compass/css/maptalks.control.compass.css`
 
 ## Usage
 
-As a plugin, `maptalks.control.compass` must be loaded after `maptalks.js` in browsers. You can also use `'import { CompassControl } from "maptalks.control.compass"` and `'import "maptalks.control.compass/css/maptalks.control.compass.css"` when developing with webpack.
+As a Maptalks.control, `maptalks.control.compass` must be loaded after `maptalks.js` in browsers. You can also use `'import { CompassControl } from "maptalks.control.compass"` and `'import "maptalks.control.compass/css/maptalks.control.compass.css"` when developing with webpack.
 
 ```html
-<script type="text/javascript" src="https://unpkg.com/maptalks/dist/maptalks.min.js"></script>
-<script
-    type="text/javascript"
-    src="https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js"
-></script>
+<!-- ... -->
+<script src="https://unpkg.com/maptalks.control.compass/dist/maptalks.control.compass.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/maptalks.control.compass/css/maptalks.control.compass.css" />
-<script>
-    // new Control: CompassControl, and add to map.
-    new maptalks.CompassControl({
-        position: 'top-right'
-        // transform: 'scale(1.2) translate(10%, 10%)'
-    }).addTo(map)
-</script>
+<!-- ... -->
+```
+
+```javascript
+// new Control: CompassControl, and add to map.
+new maptalks.CompassControl({
+    position: 'top-right'
+    backgroundColor: '#00BCD4', // 'rgba(235, 235, 235, .65)'
+    transform: 'scale(1.2) translate(10%, 10%)'
+}).addTo(map)
 ```
 
 ## API Reference
@@ -40,6 +41,7 @@ new maptalks.CompassControl(options)
 
 -   options
     -   position **String** like other maptalksControl.
+    -   backgroundColor **String** background-color of the compass.
     -   transform **String** the compass dom's style: 'transform: %s'.
 
 ## Contributing
@@ -64,18 +66,6 @@ $ npm install
 
 ```shell
 $ gulp watch
-```
-
--   Tests
-
-```shell
-$ npm test
-```
-
--   Watch source changes and run tests repeatedly
-
-```shell
-$ gulp tdd
 ```
 
 -   Package and generate minified bundles to dist directory

@@ -3,9 +3,7 @@ const pkg = require('./package.json')
 const { BundleHelper } = require('maptalks-build-helpers')
 const bundleHelper = new BundleHelper(pkg)
 
-gulp.task('build', () => {
-    return bundleHelper.bundle('index.js')
-})
+gulp.task('build', () => bundleHelper.bundle('index.js'))
 
 gulp.task(
     'minify',
@@ -15,13 +13,7 @@ gulp.task(
     })
 )
 
-gulp.task(
-    'watch',
-    gulp.series('build', (done) => {
-        gulp.watch(['index.js', './gulpfile.js'], ['build'])
-        done()
-    })
-)
+gulp.task('watch', () => gulp.watch(['index.js', './gulpfile.js'], gulp.series('build')))
 
 // const { TestHelper } = require('maptalks-build-helpers')
 // const testHelper = new TestHelper()

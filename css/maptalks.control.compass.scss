@@ -1,4 +1,3 @@
-$compassBg: #172029;
 $dialWidth: 2px;
 $size: 4px;
 $sizeX2: $size * 2;
@@ -10,7 +9,6 @@ $sizeX10: $size * 10;
     width: $sizeX10;
     height: $sizeX10;
     border-radius: 50%;
-    background-color: $compassBg;
     .maptalks-compass-dial {
         .maptalks-compass-dial-clock {
             position: absolute;

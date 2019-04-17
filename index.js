@@ -1,5 +1,6 @@
 const options = {
     position: 'top-right',
+    backgroundColor: '#172029',
     transform: ''
 }
 
@@ -14,9 +15,12 @@ export class CompassControl extends maptalks.control.Control {
 
     buildOn(map) {
         const compass = this._getCompass()
-        const style = this.options['transform']
         this._compass = compass
-        if (style) maptalks.DomUtil.setStyle(this._compass, `transform:${style};`)
+        const transform = this.options['transform']
+        const bgColor = this.options['backgroundColor']
+        let style = `background-color:${bgColor};`
+        if (transform) style += ` transform:${transform};`
+        maptalks.DomUtil.setStyle(this._compass, style)
         return compass
     }
 
