@@ -1,4 +1,4 @@
-//new Map
+// new Map
 const map = new maptalks.Map('map', {
     center: [121.387, 31.129],
     zoom: 14,
@@ -31,12 +31,12 @@ const map = new maptalks.Map('map', {
     }
 })
 
-//new Compass
+// new Compass
 let compassControl = null
 const addCompassControl = () => (compassControl = new maptalks.CompassControl({ position: 'top-right' }).addTo(map))
 addCompassControl()
 
-//new Toolbar
+// new Toolbar
 const toolbar = new maptalks.control.Toolbar({
     position: 'top-left',
     items: [{ item: 'add', click: () => addCompassControl() }, { item: 'remove', click: () => compassControl.remove() }]
