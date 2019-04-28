@@ -35,7 +35,7 @@ export class CompassControl extends maptalks.control.Control {
         this.map.off('moveing', this._rotateCompass, this)
         this.map.off('mousemove', this._rotateCompass, this)
         this.map.off('viewchange', this._rotateCompass, this)
-        removeDomNode(this._compass)
+        this._compass.remove()
         delete this._deg
         delete this._compass
         delete this._needle

@@ -1708,9 +1708,10 @@ glob-stream@^6.1.0:
     to-absolute-glob "^2.0.0"
     unique-stream "^2.0.2"
 
-glob-watcher@^5.0.0:
+glob-watcher@^5.0.3:
   version "5.0.3"
-  resolved "https://registry.yarnpkg.com/glob-watcher/-/glob-watcher-5.0.3.tgz#88a8abf1c4d131eb93928994bc4a593c2e5dd626"
+  resolved "https://registry.npm.taobao.org/glob-watcher/download/glob-watcher-5.0.3.tgz#88a8abf1c4d131eb93928994bc4a593c2e5dd626"
+  integrity sha1-iKir8cTRMeuTkomUvEpZPC5d1iY=
   dependencies:
     anymatch "^2.0.0"
     async-done "^1.2.0"
@@ -1770,9 +1771,10 @@ graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-gulp-cli@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/gulp-cli/-/gulp-cli-2.1.0.tgz#2705143ae744c9e10d894ca621ce0a3933aa2e89"
+gulp-cli@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npm.taobao.org/gulp-cli/download/gulp-cli-2.2.0.tgz#5533126eeb7fe415a7e3e84a297d334d5cf70ebc"
+  integrity sha1-VTMSbut/5BWn4+hKKX0zTVz3Drw=
   dependencies:
     ansi-colors "^1.0.1"
     archy "^1.0.0"
@@ -1793,13 +1795,14 @@ gulp-cli@^2.0.0:
     v8flags "^3.0.1"
     yargs "^7.1.0"
 
-gulp@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/gulp/-/gulp-4.0.0.tgz#95766c601dade4a77ed3e7b2b6dc03881b596366"
+gulp@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npm.taobao.org/gulp/download/gulp-4.0.1.tgz#987a38a55a7d3677f6b49e291b06bc05809f33d9"
+  integrity sha1-mHo4pVp9Nnf2tJ4pGwa8BYCfM9k=
   dependencies:
-    glob-watcher "^5.0.0"
-    gulp-cli "^2.0.0"
-    undertaker "^1.0.0"
+    glob-watcher "^5.0.3"
+    gulp-cli "^2.2.0"
+    undertaker "^1.2.1"
     vinyl-fs "^3.0.0"
 
 gulplog@^1.0.0:
@@ -3635,9 +3638,10 @@ undertaker-registry@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/undertaker-registry/-/undertaker-registry-1.0.1.tgz#5e4bda308e4a8a2ae584f9b9a4359a499825cc50"
 
-undertaker@^1.0.0:
+undertaker@^1.2.1:
   version "1.2.1"
-  resolved "https://registry.yarnpkg.com/undertaker/-/undertaker-1.2.1.tgz#701662ff8ce358715324dfd492a4f036055dfe4b"
+  resolved "https://registry.npm.taobao.org/undertaker/download/undertaker-1.2.1.tgz#701662ff8ce358715324dfd492a4f036055dfe4b"
+  integrity sha1-cBZi/4zjWHFTJN/UkqTwNgVd/ks=
   dependencies:
     arr-flatten "^1.0.1"
     arr-map "^2.0.0"

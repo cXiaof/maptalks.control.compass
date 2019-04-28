@@ -1,5 +1,5 @@
 /*!
- * maptalks.control.compass v0.1.0
+ * maptalks.control.compass v0.1.1
  * LICENSE : MIT
  * (c) 2016-2019 maptalks.org
  */
@@ -60,7 +60,7 @@ var CompassControl = function (_maptalks$control$Con) {
         this.map.off('moveing', this._rotateCompass, this);
         this.map.off('mousemove', this._rotateCompass, this);
         this.map.off('viewchange', this._rotateCompass, this);
-        removeDomNode(this._compass);
+        this._compass.remove();
         delete this._deg;
         delete this._compass;
         delete this._needle;
@@ -117,6 +117,6 @@ exports.CompassControl = CompassControl;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.0');
+typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.1');
 
 })));

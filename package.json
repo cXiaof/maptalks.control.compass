@@ -1,6 +1,6 @@
 {
   "name": "maptalks.control.compass",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A maptalks Compass Control.",
   "license": "MIT",
   "author": "cXiaof",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.1",
     "maptalks": "^0.44.0",
     "maptalks-build-helpers": "^0.5.0"
   }
