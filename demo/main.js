@@ -38,10 +38,18 @@ const map = new maptalks.Map('map', {
 
 // new Compass
 let compassControl = null
-const addCompassControl = () =>
-    (compassControl = new maptalks.CompassControl({
+
+const removeCompassControl = () => {
+    if (compassControl) compassControl.remove()
+    compassControl = null
+}
+
+const addCompassControl = () => {
+    removeCompassControl()
+    compassControl = new maptalks.CompassControl({
         position: 'top-right'
-    }).addTo(map))
+    }).addTo(map)
+}
 addCompassControl()
 
 // new Toolbar
@@ -49,6 +57,6 @@ const toolbar = new maptalks.control.Toolbar({
     position: 'top-left',
     items: [
         { item: 'add', click: () => addCompassControl() },
-        { item: 'remove', click: () => compassControl.remove() }
+        { item: 'remove', click: () => removeCompassControl() }
     ]
 }).addTo(map)

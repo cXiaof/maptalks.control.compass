@@ -18,23 +18,20 @@ export class CompassControl extends maptalks.control.Control {
         this._compass = compass
         const transform = this.options['transform']
         const bgColor = this.options['backgroundColor']
-        let style = `background-color:${bgColor};`
-        if (transform) style += ` transform:${transform};`
+        let style = `background-color: ${bgColor};`
+        if (transform) style += ` transform: ${transform};`
         maptalks.DomUtil.setStyle(this._compass, style)
         return compass
     }
 
     onAdd() {
         this.map = this.getMap()
-        this.map.on('moveing', this._rotateCompass, this)
-        this.map.on('mousemove', this._rotateCompass, this)
-        this.map.on('viewchange', this._rotateCompass, this)
+        this.map.on('mousemove animating', this._rotateCompass, this)
+        this._rotateCompass()
     }
 
     onRemove() {
-        this.map.off('moveing', this._rotateCompass, this)
-        this.map.off('mousemove', this._rotateCompass, this)
-        this.map.off('viewchange', this._rotateCompass, this)
+        this.map.off('mousemove animating', this._rotateCompass, this)
         this._compass.remove()
         delete this._deg
         delete this._compass

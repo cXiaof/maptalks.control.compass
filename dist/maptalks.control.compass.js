@@ -1,5 +1,5 @@
 /*!
- * maptalks.control.compass v0.1.1
+ * maptalks.control.compass v0.1.2
  * LICENSE : MIT
  * (c) 2016-2019 maptalks.org
  */
@@ -43,23 +43,20 @@ var CompassControl = function (_maptalks$control$Con) {
         this._compass = compass;
         var transform = this.options['transform'];
         var bgColor = this.options['backgroundColor'];
-        var style = 'background-color:' + bgColor + ';';
-        if (transform) style += ' transform:' + transform + ';';
+        var style = 'background-color: ' + bgColor + ';';
+        if (transform) style += ' transform: ' + transform + ';';
         maptalks.DomUtil.setStyle(this._compass, style);
         return compass;
     };
 
     CompassControl.prototype.onAdd = function onAdd() {
         this.map = this.getMap();
-        this.map.on('moveing', this._rotateCompass, this);
-        this.map.on('mousemove', this._rotateCompass, this);
-        this.map.on('viewchange', this._rotateCompass, this);
+        this.map.on('mousemove animating', this._rotateCompass, this);
+        this._rotateCompass();
     };
 
     CompassControl.prototype.onRemove = function onRemove() {
-        this.map.off('moveing', this._rotateCompass, this);
-        this.map.off('mousemove', this._rotateCompass, this);
-        this.map.off('viewchange', this._rotateCompass, this);
+        this.map.off('mousemove animating', this._rotateCompass, this);
         this._compass.remove();
         delete this._deg;
         delete this._compass;
@@ -72,7 +69,7 @@ var CompassControl = function (_maptalks$control$Con) {
         if (bearing <= 180) bearing *= -1;
         if (bearing !== parseInt(this._deg, 0)) {
             this._deg = bearing;
-            maptalks.DomUtil.setStyle(this._needle, 'transform:rotate(' + this._deg + 'deg);');
+            maptalks.DomUtil.setStyle(this._needle, 'transform: rotate(' + this._deg + 'deg);');
         }
     };
 
@@ -117,6 +114,6 @@ exports.CompassControl = CompassControl;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.1');
+typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.2');
 
 })));
