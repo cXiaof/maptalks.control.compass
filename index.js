@@ -47,7 +47,10 @@ export class CompassControl extends maptalks.control.Control {
         if (bearing <= 180) bearing *= -1
         if (bearing !== parseInt(this._deg, 0)) {
             this._deg = bearing
-            maptalks.DomUtil.setStyle(this._needle, `transform:rotate(${this._deg}deg);`)
+            maptalks.DomUtil.setStyle(
+                this._needle,
+                `transform: rotate(${this._deg}deg);`
+            )
         }
     }
 
