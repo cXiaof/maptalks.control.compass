@@ -1,6 +1,6 @@
 {
   "name": "maptalks.control.compass",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A maptalks Compass Control.",
   "license": "MIT",
   "author": "cXiaof",
@@ -22,16 +22,18 @@
   "homepage": "https://github.com/cXiaof/maptalks.control.compass",
   "scripts": {
     "prepublish": "gulp minify",
-    "b": "gulp minify",
-    "watch": "gulp watch",
-    "w": "gulp watch"
+    "lint": "prettier --loglevel silent --write index.js"
+  },
+  "peerDependencies": {
+    "maptalks": ">=0.31.0"
   },
   "dependencies": {},
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
-    "gulp": "^4.0.1",
-    "maptalks": "^0.44.0",
-    "maptalks-build-helpers": "^0.5.0"
+    "gulp": "^4.0.2",
+    "maptalks": "^0.48.0",
+    "maptalks-build-helpers": "^0.4.5",
+    "prettier": "^2.0.5"
   }
 }

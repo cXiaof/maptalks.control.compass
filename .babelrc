@@ -1,11 +1,5 @@
 {
-  "presets": [
-    ["env", {"modules": false,"loose": true}]
-  ],
-  "plugins" : [
-    "transform-proto-to-assign"
-  ],
-  "ignore": [
-    "dist/*.js"
-  ]
+    "presets": [["env", { "modules": false, "loose": true }]],
+    "plugins": ["transform-proto-to-assign"],
+    "ignore": ["dist/*.js"]
 }

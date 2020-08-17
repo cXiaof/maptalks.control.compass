@@ -13,7 +13,9 @@ gulp.task(
     })
 )
 
-gulp.task('watch', () => gulp.watch(['index.js', './gulpfile.js'], gulp.series('build')))
+gulp.task('watch', () =>
+    gulp.watch(['index.js', './gulpfile.js'], gulp.series('build'))
+)
 
 // const { TestHelper } = require('maptalks-build-helpers')
 // const testHelper = new TestHelper()
@@ -37,4 +39,4 @@ gulp.task('watch', () => gulp.watch(['index.js', './gulpfile.js'], gulp.series('
 //     })
 // )
 
-gulp.task('default', gulp.series('build'))
+gulp.task('default', gulp.series('watch'))

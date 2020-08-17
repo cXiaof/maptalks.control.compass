@@ -1,7 +1,7 @@
 const options = {
     position: 'top-right',
     backgroundColor: '#172029',
-    transform: ''
+    transform: '',
 }
 
 export class CompassControl extends maptalks.control.Control {

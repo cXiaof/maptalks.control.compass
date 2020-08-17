@@ -1,2 +1,53 @@
-.maptalks-compass{width:40px;height:40px;border-radius:50%}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock{position:absolute;width:2px;height:40px;left:calc(50% - 1px)}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock::before,.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock::after{content:'\20';display:block;width:2px;background:white}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(odd)::before,.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(odd)::after{height:8px}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(odd)::after{margin-top:24px}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(even)::before,.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(even)::after{height:4px}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(even)::after{margin-top:32px}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(1){transform:rotate(0deg)}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(2){transform:rotate(45deg)}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(3){transform:rotate(90deg)}.maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(4){transform:rotate(135deg)}.maptalks-compass .maptalks-compass-needle{position:absolute;width:100%;top:50%}.maptalks-compass .maptalks-compass-needle::before,.maptalks-compass .maptalks-compass-needle::after{content:'';position:absolute;width:0;height:0;border-style:solid;left:16px}.maptalks-compass .maptalks-compass-needle::before{top:0;border-width:20px 4px 0;border-color:white transparent transparent;transform-origin:top center}.maptalks-compass .maptalks-compass-needle::after{top:-20px;border-width:0 4px 20px;border-color:transparent transparent red;transform-origin:bottom center}
+.maptalks-compass {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; }
+  .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock {
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    left: calc(50% - 1px); }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock::before, .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock::after {
+      content: '\20';
+      display: block;
+      width: 2px;
+      background: white; }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(odd)::before, .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(odd)::after {
+      height: 8px; }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(odd)::after {
+      margin-top: 24px; }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(even)::before, .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(even)::after {
+      height: 4px; }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(even)::after {
+      margin-top: 32px; }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(1) {
+      transform: rotate(0deg); }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(2) {
+      transform: rotate(45deg); }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(3) {
+      transform: rotate(90deg); }
+    .maptalks-compass .maptalks-compass-dial .maptalks-compass-dial-clock:nth-child(4) {
+      transform: rotate(135deg); }
+  .maptalks-compass .maptalks-compass-needle {
+    position: absolute;
+    width: 100%;
+    top: 50%; }
+    .maptalks-compass .maptalks-compass-needle::before, .maptalks-compass .maptalks-compass-needle::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      left: 16px; }
+    .maptalks-compass .maptalks-compass-needle::before {
+      top: 0;
+      border-width: 20px 4px 0;
+      border-color: white transparent transparent;
+      transform-origin: top center; }
+    .maptalks-compass .maptalks-compass-needle::after {
+      top: -20px;
+      border-width: 0 4px 20px;
+      border-color: transparent transparent red;
+      transform-origin: bottom center; }
+
 /*# sourceMappingURL=maptalks.control.compass.css.map */

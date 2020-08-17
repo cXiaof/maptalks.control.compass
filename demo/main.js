@@ -9,17 +9,17 @@ const map = new maptalks.Map('map', {
         attribution:
             '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
         maxAvailableZoom: 18,
-        placeholder: true
+        placeholder: true,
     }),
     scaleControl: { position: 'bottom-right', metric: true, imperial: true },
     zoomControl: {
         position: { top: 80, right: 20 },
         slider: false,
-        zoomLevel: true
+        zoomLevel: true,
     },
     spatialReference: {
         projection: 'EPSG:3857',
-        resolutions: (function() {
+        resolutions: (function () {
             const resolutions = []
             const d = 2 * 6378137 * Math.PI
             for (let i = 0; i < 22; i++) {
@@ -31,9 +31,9 @@ const map = new maptalks.Map('map', {
             top: 6378137 * Math.PI,
             bottom: -6378137 * Math.PI,
             left: -6378137 * Math.PI,
-            right: 6378137 * Math.PI
-        }
-    }
+            right: 6378137 * Math.PI,
+        },
+    },
 })
 
 // new Compass
@@ -47,7 +47,7 @@ const removeCompassControl = () => {
 const addCompassControl = () => {
     removeCompassControl()
     compassControl = new maptalks.CompassControl({
-        position: 'top-right'
+        position: 'top-right',
     }).addTo(map)
 }
 addCompassControl()
@@ -57,6 +57,6 @@ const toolbar = new maptalks.control.Toolbar({
     position: 'top-left',
     items: [
         { item: 'add', click: () => addCompassControl() },
-        { item: 'remove', click: () => removeCompassControl() }
-    ]
+        { item: 'remove', click: () => removeCompassControl() },
+    ],
 }).addTo(map)

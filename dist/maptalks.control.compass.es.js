@@ -1,7 +1,10 @@
 /*!
- * maptalks.control.compass v0.1.2
+ * maptalks.control.compass v0.1.3
  * LICENSE : MIT
- * (c) 2016-2019 maptalks.org
+ * (c) 2016-2020 maptalks.org
+ */
+/*!
+ * requires maptalks@>=0.31.0 
  */
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
@@ -106,4 +109,4 @@ CompassControl.mergeOptions(options);
 
 export { CompassControl };
 
-typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.2');
+typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.3, requires maptalks@>=0.31.0.');
