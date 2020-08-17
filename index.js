@@ -26,27 +26,27 @@ export class CompassControl extends maptalks.control.Control {
 
     onAdd() {
         this.map = this.getMap()
-        this.map.on('mousemove animating', this._rotateCompass, this)
+        this.map.on('animating mousemove touchmove', this._rotateCompass, this)
         this._rotateCompass()
     }
 
     onRemove() {
-        this.map.off('mousemove animating', this._rotateCompass, this)
+        this.map.off('animating mousemove touchmove', this._rotateCompass, this)
         this._compass.remove()
-        delete this._deg
         delete this._compass
+        delete this._bearing
         delete this._needle
         delete this.map
     }
 
     _rotateCompass() {
-        let bearing = parseInt(this.map.getBearing(), 0)
+        let bearing = this.map.getBearing().toFixed(1)
         if (bearing <= 180) bearing *= -1
-        if (bearing !== parseInt(this._deg, 0)) {
-            this._deg = bearing
+        if (bearing !== this._bearing) {
+            this._bearing = bearing
             maptalks.DomUtil.setStyle(
                 this._needle,
-                `transform: rotate(${this._deg}deg);`
+                `transform: rotate(${this._bearing}deg);`
             )
         }
     }

@@ -1,44 +1,42 @@
-$dialWidth: 2px;
-$size: 4px;
-$sizeX2: $size * 2;
-$sizeX4: $size * 4;
-$sizeX5: $size * 5;
-$sizeX10: $size * 10;
+$dial-width: 2px !default;
+$dial-height: $dial-width * 2;
+$dial-height-even: $dial-height;
+$dial-height-odd: $dial-height * 2;
+
+$compass-size: $dial-width * 20;
+$compass-size-hf: $compass-size / 2;
+
+@mixin margin-middle() {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
 
 .maptalks-compass {
-    width: $sizeX10;
-    height: $sizeX10;
+    width: $compass-size;
+    height: $compass-size;
     border-radius: 50%;
     .maptalks-compass-dial {
         .maptalks-compass-dial-clock {
-            position: absolute;
-            width: $dialWidth;
-            height: $sizeX10;
-            left: calc(50% - #{$dialWidth / 2});
-            &::before,
-            &::after {
-                content: '\20';
-                display: block;
-                width: $dialWidth;
-                background: white;
-            }
+            @include margin-middle;
+            width: $dial-width;
+            height: $compass-size;
             &:nth-child(odd) {
-                &::before,
-                &::after {
-                    height: $sizeX2;
-                }
-                &::after {
-                    margin-top: ($sizeX10 - ($sizeX2 * 2));
-                }
+                background: linear-gradient(
+                    white $dial-height-odd,
+                    transparent $dial-height-odd,
+                    transparent calc(100% - #{$dial-height-odd}),
+                    white calc(100% - #{$dial-height-odd})
+                );
             }
             &:nth-child(even) {
-                &::before,
-                &::after {
-                    height: $size;
-                }
-                &::after {
-                    margin-top: ($sizeX10 - ($size * 2));
-                }
+                background: linear-gradient(
+                    white $dial-height-even,
+                    transparent $dial-height-even,
+                    transparent calc(100% - #{$dial-height-even}),
+                    white calc(100% - #{$dial-height-even})
+                );
             }
             @for $i from 1 through 4 {
                 &:nth-child(#{$i}) {
@@ -50,28 +48,28 @@ $sizeX10: $size * 10;
 
     .maptalks-compass-needle {
         position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 100%;
-        top: 50%;
         &::before,
         &::after {
             content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
+            @include margin-middle;
             border-style: solid;
-            left: $sizeX4;
+            width: 0;
         }
         &::before {
-            top: 0;
-            border-width: $sizeX5 $size 0;
-            border-color: white transparent transparent;
-            transform-origin: top center;
-        }
-        &::after {
-            top: -$sizeX5;
-            border-width: 0 $size $sizeX5;
+            bottom: 50%;
+            border-width: 0 $dial-height $compass-size-hf;
             border-color: transparent transparent red;
             transform-origin: bottom center;
+        }
+        &::after {
+            top: 50%;
+            border-width: $compass-size-hf $dial-height 0;
+            border-color: white transparent transparent;
+            transform-origin: top center;
         }
     }
 }
