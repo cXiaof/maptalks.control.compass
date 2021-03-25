@@ -1,7 +1,7 @@
 /*!
- * maptalks.control.compass v0.1.3
+ * maptalks.control.compass v0.1.4
  * LICENSE : MIT
- * (c) 2016-2020 maptalks.org
+ * (c) 2016-2021 maptalks.org
  */
 /*!
  * requires maptalks@>=0.31.0 
@@ -41,7 +41,7 @@ var CompassControl = function (_maptalks$control$Con) {
         return _this;
     }
 
-    CompassControl.prototype.buildOn = function buildOn(map) {
+    CompassControl.prototype.buildOn = function buildOn() {
         var compass = this._getCompass();
         this._compass = compass;
         var transform = this.options['transform'];
@@ -117,6 +117,6 @@ exports.CompassControl = CompassControl;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.3, requires maptalks@>=0.31.0.');
+typeof console !== 'undefined' && console.log('maptalks.control.compass v0.1.4, requires maptalks@>=0.31.0.');
 
 })));

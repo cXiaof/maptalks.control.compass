@@ -13,7 +13,7 @@ export class CompassControl extends maptalks.control.Control {
         this.CLOCK = 'maptalks-compass-dial-clock'
     }
 
-    buildOn(map) {
+    buildOn() {
         const compass = this._getCompass()
         this._compass = compass
         const transform = this.options['transform']
