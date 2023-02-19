@@ -2,6 +2,7 @@ const options = {
   position: 'top-right',
   backgroundColor: '#172029',
   transform: '',
+  resetViewTriggers: null,
 }
 
 export class CompassControl extends maptalks.control.Control {
@@ -21,6 +22,7 @@ export class CompassControl extends maptalks.control.Control {
     let style = `background-color: ${bgColor};`
     if (transform) style += ` transform: ${transform};`
     maptalks.DomUtil.setStyle(this._compass, style)
+    this._bindResetViewTrigger()
     return compass
   }
 
@@ -57,6 +59,7 @@ export class CompassControl extends maptalks.control.Control {
     const needle = this._getNeedle()
     compass.appendChild(dial)
     compass.appendChild(needle)
+    this._bindEventListener(compass)
     return compass
   }
 
@@ -81,6 +84,37 @@ export class CompassControl extends maptalks.control.Control {
 
   _createDivWithClassName(name) {
     return maptalks.DomUtil.createEl('div', name)
+  }
+
+  _bindEventListener(compass) {
+    compass.onclick = (e) => {
+      this.fire('click', { domEvent: e })
+    }
+    compass.ondblclick = (e) => {
+      this.fire('dblclick', { domEvent: e })
+    }
+    compass.oncontextmenu = (e) => {
+      this.fire('contextmenu', { domEvent: e })
+    }
+  }
+
+  _bindResetViewTrigger() {
+    const trigger = this.options['resetViewTriggers']
+    if (!trigger) return
+    let eventsOn = ''
+    let options
+    if (typeof trigger === 'string') {
+      eventsOn = trigger
+    } else if (Array.isArray(trigger)) {
+      eventsOn = trigger[0]
+      options = trigger[1]
+    }
+    this.on(eventsOn, this._resetView.bind(this, options))
+  }
+
+  _resetView(options) {
+    const view0 = { pitch: 0, bearing: 0 }
+    this.map.animateTo(view0, options)
   }
 }
 

@@ -1,14 +1,12 @@
 // new Map
 const map = new maptalks.Map('map', {
-  center: [121.387, 31.129],
+  center: [121.6508, 31.1758],
   zoom: 14,
   baseLayer: new maptalks.TileLayer('base', {
-    urlTemplate: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+    urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
     subdomains: ['a', 'b', 'c', 'd'],
     attribution:
       '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
-    maxAvailableZoom: 18,
-    placeholder: true,
   }),
   scaleControl: { position: 'bottom-right', metric: true, imperial: true },
   zoomControl: {
@@ -19,17 +17,17 @@ const map = new maptalks.Map('map', {
 })
 
 // new Compass
-let compassControl = null
+let compassControl
 
 const removeCompassControl = () => {
-  if (compassControl) compassControl.remove()
-  compassControl = null
+  compassControl?.remove()
 }
 
 const addCompassControl = () => {
   removeCompassControl()
   compassControl = new maptalks.CompassControl({
     position: 'top-right',
+    resetViewTriggers: 'dblclick',
   }).addTo(map)
 }
 addCompassControl()
