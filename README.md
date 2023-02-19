@@ -49,7 +49,7 @@ new maptalks.CompassControl(options)
   - position **String** - like other maptalks.Control.
   - backgroundColor **String** - background-color of the compass.
   - transform **String** - the compass dom's style: 'transform: %s'.
-  - resetViewTriggers **String | Array** - set event triggers on Compass to set map view to `{bearing: 0, pitch: 0}`.
+  - resetViewTriggers **String | Array** - set `eventsOn` triggers on Compass to set map view to `{bearing: 0, pitch: 0}`. If `Array`, the second value will be used as the animate options.
 
 - events
   - add
