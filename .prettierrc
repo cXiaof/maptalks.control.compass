@@ -1,5 +1,8 @@
 {
-    "semi": false,
-    "singleQuote": true,
-    "jsxSingleQuote": true
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "trailingComma": "all",
+  "proseWrap": "never",
+  "overrides": [{ "files": ".prettierrc", "options": { "parser": "json" } }]
 }
