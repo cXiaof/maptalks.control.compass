@@ -30,10 +30,12 @@ As a Maptalks.control, `maptalks.control.compass` must be loaded after `maptalks
 ```javascript
 // new Control: CompassControl, and add to map.
 new maptalks.CompassControl({
-    position: 'top-right'
-    backgroundColor: '#00BCD4', // 'rgba(235, 235, 235, .65)'
-    transform: 'scale(1.2) translate(10%, 10%)'
+  position: 'top-right',
+  backgroundColor: '#00BCD4', // 'rgba(235, 235, 235, .65)'
+  transform: 'scale(1.2) translate(10%, 10%)',
+  resetViewTriggers: 'click dblclick', // ['dblclick contextmenu', {duration: 500}]
 }).addTo(map)
+// All options are optional.
 ```
 
 ## API Reference
@@ -42,10 +44,20 @@ new maptalks.CompassControl({
 new maptalks.CompassControl(options)
 ```
 
-- options
-  - position **String** like other maptalksControl.
-  - backgroundColor **String** background-color of the compass.
-  - transform **String** the compass dom's style: 'transform: %s'.
+- options [optional]
+
+  - position **String** - like other maptalks.Control.
+  - backgroundColor **String** - background-color of the compass.
+  - transform **String** - the compass dom's style: 'transform: %s'.
+  - resetViewTriggers **String | Array** - set event triggers on Compass to set map view to `{bearing: 0, pitch: 0}`.
+
+- events
+  - add
+  - remove
+  - positionchange
+  - click
+  - dblclick
+  - contextmenu
 
 ## Contributing
 
